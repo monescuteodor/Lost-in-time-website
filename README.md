@@ -1,4 +1,7 @@
 # Lost-in-time-website
+
+**The website is in Romanian**.
+
 I made a project with my team and my job was to do the website!
 
 Repository for the presentation website and visual assets of **Lost in Time**.
