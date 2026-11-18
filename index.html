@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#14130f">
+<meta name="description" content="Lost in Time — platformer 3D FPV & multiplayer. Un joc de hackathon despre bucle temporale, o pădure japoneză și drumul înapoi acasă. Tema: Bounce back!">
+<title>Lost in Time — Bounce back! · Hackathon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:ital,wght@0,400..800;1,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="nav-brand" href="#home" aria-label="Lost in Time — început">
+    <span class="wordmark wordmark--sm"><span class="wm-a">Lost in</span> <span>t̴̛̰͓̩̬̀͒͗i̸͎̓͌̈́̀̀m̷̤̻̮͓̔̆̑̍e̷͓̝̯̔́̽̈́ͅ </span></span>
+  </a>
+  <nav class="nav-links" aria-label="Secțiuni">
+    <a class="nav-link" href="#prezentare">Prezentare</a>
+    <a class="nav-link" href="#gameplay">Gameplay</a>
+    <a class="nav-link" href="#poveste">Poveste</a>
+    <a class="nav-link" href="#modele">Modele 3D</a>
+    <a class="nav-link" href="#echipa">Echipă</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Deschide meniul" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu-head">
+    <span class="wordmark wordmark--sm"><span class="wm-a">Lost in</span> <span>t̴̛̰͓̩̬̀͒͗i̸͎̓͌̈́̀̀m̷̤̻̮͓̔̆̑̍e̷͓̝̯̔́̽̈́ͅ </span></span>
+    <button class="menu-close" id="menuClose" aria-label="Închide meniul">Închide ✕</button>
+  </div>
+  <nav class="menu-links" aria-label="Meniu mobil">
+    <a class="menu-link" href="#prezentare"><i></i>Prezentare</a>
+    <a class="menu-link" href="#gameplay"><i></i>Gameplay</a>
+    <a class="menu-link" href="#poveste"><i></i>Poveste</a>
+    <a class="menu-link" href="#modele"><i></i>Modele 3D</a>
+    <a class="menu-link" href="#echipa"><i></i>Echipă</a>
+  </nav>
+</div>
+
+<main id="top">
+
+<section class="hero" id="home">
+  <div class="hero-media" data-hero-media>
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+
+  <div class="hero-content container" data-hero-content>
+    <p class="hero-eyebrow" data-reveal>Echipa din: Teo, Andy și Paul</p>
+    <h1 class="hero-title" data-reveal style="--i:1">
+      <span class="wordmark wordmark--hero">
+        <span class="wm-a">Lost in</span>
+        <span>t̴̛̰͓̩̬̀͒͗i̸͎̓͌̈́̀̀m̷̤̻̮͓̔̆̑̍e̷͓̝̯̔́̽̈́ͅ </span>
+      </span>
+    </h1>
+    <p class="hero-theme" data-reveal style="--i:2">Tema hackathonului — <em>„Bounce back!”</em></p>
+    <p class="hero-lead" data-reveal style="--i:3">O pădure japoneză din care trebuie să fugi ca să ajungi în siguranță la cabană. Niciun drum nu e ceea ce pare. Scopul e simplu: <strong>acasă</strong>.</p>
+    <div class="hero-cta" data-reveal style="--i:4">
+      <a class="btn btn--primary" href="https://bandys.itch.io/lost-in-time" target="_blank" rel="noopener">Joacă pe itch.io</a>
+      <a class="btn btn--ghost" href="https://github.com/Bandyss-me/Lost_in_time" target="_blank" rel="noopener">Cod pe GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="echipa">
+  <div class="container">
+    <h2 class="sec-title" data-reveal>Trei ciungi</h2>
+
+    <div class="team">
+      <article class="member" data-reveal style="--member:#d9a441">
+        <div class="member-id"><h3>Andy</h3><span class="member-role">Base game</span></div>
+        <ul class="member-tasks">
+          <li><b>Movement</b><span>Sistem de mișcare, sărituri, deplasare și fizică adaptată pentru platformer FPV.</span></li>
+          <li><b>Base game</b><span>Implementarea arhitecturii și logicii de bază a jocului — fundația pe care se așază toate celelalte sisteme.</span></li>
+          <li><b>Main menu</b><span>Meniul principal și fluxul de navigare.</span></li>
+        </ul>
+      </article>
+      <article class="member" data-reveal style="--member:#7fa06a">
+        <div class="member-id"><h3>Paul</h3><span class="member-role">Systems &amp; tools</span></div>
+        <ul class="member-tasks">
+          <li><b>Level editor</b><span>Unelte și sistem pentru construirea și editarea rapidă a nivelurilor.</span></li>
+          <li><b>Level selector</b><span>Interfața și logica de selectare a nivelurilor.</span></li>
+        </ul>
+      </article>
+      <article class="member" data-reveal style="--member:#6fb7b0">
+        <div class="member-id"><h3>Teo</h3><span class="member-role">Web · 3D · Branding</span></div>
+        <ul class="member-tasks">
+          <li><b>Website de prezentare</b><span>Descriere, poveste, detalii joc — pagina pe care o citești acum.</span></li>
+          <li><b>Modelare 3D</b><span>Model 3D casă — destinația finală „acasă”; model 3D — element narativ și vizual în joc.</span></li>
+          <li><b>Branding &amp; materiale vizuale</b><span>Logo-ul oficial „Lost in Time” și afișul de prezentare pentru hackathon.</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+  <img src="caca.jpeg" alt="Echipa Lost in Time">
+</section>
+
+<section class="section" id="gameplay">
+  <div class="container">
+    <h2 class="sec-title" data-reveal>Gameplay loop</h2>
+
+    <div class="duo" data-stagger>
+      <article class="duo-block" data-reveal>
+        <svg class="duo-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M2 16 C8 7 24 7 30 16 C24 25 8 25 2 16 Z"/><circle cx="16" cy="16" r="4.5"/><path d="M16 2 v4 M16 26 v4 M2 16 h-1 M31 16 h1"/></svg>
+        <h3>Experiența FPV</h3>
+        <p>Perspectiva din prima persoană face din pădure ceva ce trebuie observat: un unghi, o umbră, o lanternă tremurândă. Imersiunea nu este o simplă decorațiune, ci mai degrabă procesul prin care sunt descoperite elementele ascunse.</p>
+      </article>
+      <article class="duo-block" data-reveal>
+        <svg class="duo-icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="11" cy="11" r="4.5"/><path d="M3 27 c0-6 4-9 8-9 s8 3 8 9"/><circle cx="23" cy="12" r="3.5"/><path d="M20 19 c4-1 9 1 9 8"/></svg>
+        <h3>Multiplayer</h3>
+        <p>Buclele se sparg mai ușor în doi. Multiplayerul permite paralelizarea explorării și a rezolvării problemelor: un jucător urmărește mediul, în timp ce celălalt îl testează.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--story" id="poveste">
+  <div class="container">
+    <h2 class="sec-title" data-reveal>Pădurea <br><em>te păcălește.</em></h2>
+    <div class="story-body">
+      <p class="story-p dropcap" data-reveal>Te trezești pe o potecă din Japonia, între cireși. Singurul lucru pe care trebuie să îl faci este să ajungi la cabană. Dar pădurea nu ține cu tine: fiecare drum te întoarce în același luminiș, fiecare ieșire e o intrare.</p>
+      <p class="story-p" data-reveal>Iar după ce crezi că ai scăpat, un boss vine să te urmărească.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--models" id="modele">
+  <div class="container">
+    <h2 class="sec-title" data-reveal>Modele 3D</h2>
+
+    <div class="models-grid" data-stagger>
+
+      <article class="model-card" data-reveal>
+        <div class="model-stage">
+          <model-viewer
+            src="models/cabana.glb"
+            alt="Model 3D al cabanei — destinația finală „acasă”"
+            camera-controls
+            touch-action="pan-y"
+            auto-rotate
+            auto-rotate-delay="400"
+            rotation-per-second="18deg"
+            shadow-intensity="0.9"
+            exposure="1"
+            interaction-prompt="none"
+            loading="lazy"
+            reveal="auto">
+            <div class="model-fallback" slot="poster">Pune fișierul <code>models/cabana.glb</code></div>
+          </model-viewer>
+        </div>
+      </article>
+
+      <article class="model-card" data-reveal>
+        <div class="model-stage">
+          <model-viewer
+            src="models/boss.glb"
+            alt="Model 3D al boss-ului care te urmărește în pădure"
+            camera-controls
+            touch-action="pan-y"
+            auto-rotate
+            auto-rotate-delay="400"
+            rotation-per-second="18deg"
+            shadow-intensity="0.9"
+            exposure="1"
+            interaction-prompt="none"
+            loading="lazy"
+            reveal="auto">
+            <div class="model-fallback" slot="poster">Pune fișierul <code>models/boss.glb</code></div>
+          </model-viewer>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="wordmark wordmark--md"><span class="wm-a">Lost in</span> <span class="wm-b">time</span></span>
+      <p>Un platformer 3D FPV &amp; multiplayer despre bucle temporale și drumul înapoi acasă.</p>
+      <p class="footer-theme">Tema hackathonului — <em>„Bounce back!”</em></p>
+      <div class="footer-links">
+        <a href="https://bandys.itch.io/lost-in-time" target="_blank" rel="noopener">Joacă pe itch.io ↗</a>
+        <a href="https://github.com/Bandyss-me/Lost_in_time" target="_blank" rel="noopener">Cod sursă pe GitHub ↗</a>
+      </div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#prezentare">Prezentare</a><a href="#gameplay">Gameplay</a><a href="#poveste">Poveste</a><a href="#modele">Modele 3D</a><a href="#echipa">Echipă</a>
+    </nav>
+    <div class="footer-team">
+      <span>Andy — Base game</span><span>Paul — Systems &amp; tools</span><span>Teo — Web · 3D · Branding</span>
+    </div>
+  </div>
+  <div class="container footer-base">
+    <span>Lost in time · proiect de hackathon</span>
+  </div>
+</footer>
+
+</body>
+</html>
